@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelEase - Travel Booking & Holiday Packages</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container">
+        
+        <!-- Logo -->
+        <div class="nav-brand">
+            <a href="index.html">
+                <img src="travelEASEonly.png" alt="TravelEase Logo" class="nav-logo">
+            <span>Travel<span class="brand-highlight">Ease</span></span></a>
+        
+        </div>
+
+        <!-- Mobile Toggle -->
+        <div class="mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Menu -->
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-plane"></i> Flights</a></li>
+            <li><a href="#"><i class="fas fa-hotel"></i> Hotels</a></li>
+            <li><a href="#"><i class="fas fa-train"></i> Trains</a></li>
+            <li><a href="#"><i class="fas fa-bus"></i> Buses</a></li>
+            <li><a href="#"><i class="fas fa-ship"></i> Cruises</a></li>
+            <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Holiday Packages</a></li>
+
+            <!-- Profile Button -->
+            <li class="profile-btn">
+                <div class="profile-container">
+                    <button id="profileButton" class="profile-icon-btn">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+            
+                    <!-- Dropdown Menu -->
+                    <div id="profileMenu" class="profile-dropdown">
+                        <a href="login.php">Login</a>
+                        <a href="signup.php">Signup</a>
+                        <a href="bookings.php">My Bookings</a>
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Travel The World With <span class="highlight">Ease</span></h1>
+                <p class="hero-subtitle">Book flights, hotels, trains, buses, cruises & holiday packages all in one place</p>
+                
+                <!-- Search Tabs -->
+                <div class="search-tabs">
+                   <div class="tabs">
+    <button class="tab active" data-type="flight"><i class="fas fa-plane"></i> Flights</button>
+    <button class="tab" data-type="hotel"><i class="fas fa-hotel"></i> Hotels</button>
+    <button class="tab" data-type="train"><i class="fas fa-train"></i> Trains</button>
+    <button class="tab" data-type="bus"><i class="fas fa-bus"></i> Buses</button>
+    <button class="tab" data-type="cruise"><i class="fas fa-ship"></i> Cruises</button> <!-- NEW -->
+    <button class="tab" data-type="holiday"><i class="fas fa-suitcase-rolling"></i> Holiday Packages</button> <!-- CHANGED -->
+</div>
+                    
+                    <!-- Flight Search Form -->
+                    <form id="flight-form" class="search-form active">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-plane-departure"></i> From</label>
+                                <input type="text" placeholder="Departure City" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-plane-arrival"></i> To</label>
+                                <input type="text" placeholder="Arrival City" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Departure</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-users"></i> Passengers</label>
+                                <select>
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-search"></i> Search Flights
+                        </button>
+                    </form>
+                    
+                    <!-- Hotel Search Form -->
+                    <form id="hotel-form" class="search-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-map-marker-alt"></i> Destination</label>
+                                <input type="text" placeholder="City or Hotel Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Check-in</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Check-out</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-users"></i> Guests</label>
+                                <select>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-search"></i> Search Hotels
+                        </button>
+                    </form>
+                    
+                    <!-- Train Search Form -->
+                    <form id="train-form" class="search-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-train"></i> From Station</label>
+                                <input type="text" placeholder="Departure Station" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-train"></i> To Station</label>
+                                <input type="text" placeholder="Arrival Station" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Travel Date</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-users"></i> Passengers</label>
+                                <select>
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-search"></i> Search Trains
+                        </button>
+                    </form>
+                    
+                    <!-- Bus Search Form -->
+                    <form id="bus-form" class="search-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-bus"></i> From City</label>
+                                <input type="text" placeholder="Departure City" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-bus"></i> To City</label>
+                                <input type="text" placeholder="Arrival City" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Travel Date</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-users"></i> Passengers</label>
+                                <select>
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-search"></i> Search Buses
+                        </button>
+                    </form>
+                    
+<!-- Cruise Search Form -->
+<form id="cruise-form" class="search-form">
+    <div class="form-row">
+        <div class="form-group">
+            <label><i class="fas fa-ship"></i> Cruise Line</label>
+            <select required>
+                <option value="">Select Cruise Line</option>
+                <option value="royal-caribbean">Royal Caribbean</option>
+                <option value="carnival">Carnival Cruise Line</option>
+                <option value="norwegian">Norwegian Cruise Line</option>
+                <option value="msc">MSC Cruises</option>
+                <option value="costa">Costa Cruises</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-map-marker-alt"></i> Departure Port</label>
+            <input type="text" placeholder="Departure Port" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-calendar-alt"></i> Departure Date</label>
+            <input type="date" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-clock"></i> Duration</label>
+            <select>
+                <option value="3">3 Nights</option>
+                <option value="4">4 Nights</option>
+                <option value="5">5 Nights</option>
+                <option value="7">7 Nights</option>
+                <option value="10">10 Nights</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label><i class="fas fa-users"></i> Guests</label>
+            <select>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-door-closed"></i> Cabin Type</label>
+            <select>
+                <option value="inside">Inside Cabin</option>
+                <option value="ocean">Ocean View</option>
+                <option value="balcony">Balcony</option>
+                <option value="suite">Suite</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-route"></i> Itinerary Type</label>
+            <select>
+                <option value="caribbean">Caribbean</option>
+                <option value="mediterranean">Mediterranean</option>
+                <option value="alaska">Alaska</option>
+                <option value="asia">Asia</option>
+                <option value="bahamas">Bahamas</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-anchor"></i> Ship</label>
+            <select>
+                <option value="any">Any Ship</option>
+                <option value="symphony">Symphony of the Seas</option>
+                <option value="harmony">Harmony of the Seas</option>
+                <option value="wonder">Wonder of the Seas</option>
+                <option value="mardi-gras">Mardi Gras</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn-search">
+        <i class="fas fa-search"></i> Search Cruises
+    </button>
+</form>
+
+                    <!-- Tour Search Form -->
+                    <!-- Holiday Packages Search Form -->
+<form id="holiday-form" class="search-form">
+    <div class="form-row">
+        <div class="form-group">
+            <label><i class="fas fa-map-marked-alt"></i> Destination</label>
+            <input type="text" placeholder="Country or City" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-calendar-alt"></i> Travel Date</label>
+            <input type="date" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-clock"></i> Duration</label>
+            <select>
+                <option value="3">3 Days / 2 Nights</option>
+                <option value="4">4 Days / 3 Nights</option>
+                <option value="5">5 Days / 4 Nights</option>
+                <option value="7">7 Days / 6 Nights</option>
+                <option value="10">10 Days / 9 Nights</option>
+                <option value="14">14 Days / 13 Nights</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-users"></i> Travelers</label>
+            <select>
+                <option value="1">1 Traveler</option>
+                <option value="2">2 Travelers</option>
+                <option value="3">3 Travelers</option>
+                <option value="4">4 Travelers</option>
+                <option value="5">5 Travelers</option>
+                <option value="6">6+ Travelers</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label><i class="fas fa-hotel"></i> Hotel Category</label>
+            <select>
+                <option value="any">Any Category</option>
+                <option value="budget">Budget (2-3 Star)</option>
+                <option value="standard">Standard (3-4 Star)</option>
+                <option value="luxury">Luxury (5 Star)</option>
+                <option value="resort">Beach Resort</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-utensils"></i> Meal Plan</label>
+            <select>
+                <option value="room-only">Room Only</option>
+                <option value="breakfast">Breakfast Only</option>
+                <option value="half-board">Half Board</option>
+                <option value="full-board">Full Board</option>
+                <option value="all-inclusive">All Inclusive</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-suitcase"></i> Package Type</label>
+            <select>
+                <option value="all">All Packages</option>
+                <option value="honeymoon">Honeymoon Packages</option>
+                <option value="family">Family Packages</option>
+                <option value="adventure">Adventure Packages</option>
+                <option value="beach">Beach Holidays</option>
+                <option value="hill-station">Hill Station Tours</option>
+                <option value="international">International Tours</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-plane"></i> Include Flights</label>
+            <select>
+                <option value="yes">Yes, include flights</option>
+                <option value="no">No, only hotels & activities</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn-search">
+        <i class="fas fa-search"></i> Search Holiday Packages
+    </button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Travel<span class="highlight">Ease</span>?</h2>
+            <p class="section-subtitle">Experience seamless travel planning with our comprehensive services</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Worldwide Coverage</h3>
+                    <p>Access to thousands of flights, hotels, and travel options across the globe</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Booking</h3>
+                    <p>Real-time availability checking and instant confirmation for all bookings</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payments</h3>
+                    <p>Bank-level security with encrypted transactions and multiple payment options</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your travel queries and assistance</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We guarantee the best prices for all travel services or we'll match the difference</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy to Use</h3>
+                    <p>User-friendly interface with intuitive navigation for effortless booking experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <div class="container">
+            <h2 class="section-title">Popular <span class="highlight">Destinations</span></h2>
+            <p class="section-subtitle">Explore the most sought-after travel destinations</p>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Goa">
+                        <div class="destination-overlay">
+                            <h3>Goa</h3>
+                            <p>Beaches • Nightlife • Adventure</p>
+                            <span class="destination-price">Starting from ₹8,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tokyo">
+                        <div class="destination-overlay">
+                            <h3>Tokyo</h3>
+                            <p>Backwaters • Tea Gardens • Ayurveda</p>
+                            <span class="destination-price">Starting from ₹12,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rajasthan">
+                        <div class="destination-overlay">
+                            <h3>Rajasthan</h3>
+                            <p>Palaces • Deserts • Culture</p>
+                            <span class="destination-price">Starting from ₹15,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1697729733902-f8c92710db07?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Himachal">
+                        <div class="destination-overlay">
+                            <h3>Himachal</h3>
+                            <p>Mountains • Trekking • Snow</p>
+                            <span class="destination-price">Starting from ₹9,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Andaman">
+                        <div class="destination-overlay">
+                            <h3>Andaman</h3>
+                            <p>Islands • Water Sports • Beaches</p>
+                            <span class="destination-price">Starting from ₹18,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dubai">
+                        <div class="destination-overlay">
+                            <h3>Dubai</h3>
+                            <p>Skyscrapers • Shopping • Luxury</p>
+                            <span class="destination-price">Starting from ₹24,999</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+            <p class="section-subtitle">Everything you need for a perfect journey</p>
+            
+           <div class="services-grid">
+    <div class="service-card">
+        <div class="service-icon">
+            <i class="fas fa-plane"></i>
+        </div>
+        <h3>Flight Booking</h3>
+        <p>Domestic and international flights with best prices and flexible options</p>
+    </div>
+    
+    <div class="service-card">
+        <div class="service-icon">
+            <i class="fas fa-hotel"></i>
+        </div>
+        <h3>Hotel Reservation</h3>
+        <p>Luxury to budget hotels with verified reviews and instant confirmation</p>
+    </div>
+    
+    <div class="service-card">
+        <div class="service-icon">
+            <i class="fas fa-train"></i>
+        </div>
+        <h3>Train Tickets</h3>
+        <p>Book train tickets across India with easy cancellation and PNR status</p>
+    </div>
+    
+    <div class="service-card">
+        <div class="service-icon">
+            <i class="fas fa-bus"></i>
+        </div>
+        <h3>Bus Tickets</h3>
+        <p>Intercity bus tickets with seat selection and live tracking features</p>
+    </div>
+    
+    <div class="service-card">
+        <div class="service-icon">
+            <i class="fas fa-ship"></i>
+        </div>
+        <h3>Cruise Packages</h3>
+        <p>Luxury cruise packages with all-inclusive amenities and exotic itineraries</p>
+    </div>
+    
+    <div class="service-card">
+        <div class="service-icon">
+            <i class="fas fa-suitcase-rolling"></i>
+        </div>
+        <h3>Holiday Packages</h3>
+        <p>Customized holiday packages with flights, hotels, transfers & sightseeing</p>
+    </div>
+</div>
+            </div>
+      
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="travelEASEonly.png" alt="TravelEase Logo" class="nav-logo">
+                        <span>Travel<span class="brand-highlight">Ease</span></span>
+                    </div>
+                    <p>Your one-stop solution for all travel needs. Book flights, hotels, trains, buses, and holiday packages with ease.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+    <h3>Quick Links</h3>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Hotels</a></li>
+        <li><a href="#">Trains</a></li>
+        <li><a href="#">Buses</a></li>
+        <li><a href="#">Cruises</a></li> <!-- NEW -->
+        <li><a href="#">Holiday Packages</a></li> <!-- CHANGED -->
+    </ul>
+</div>
+
+<div class="footer-section">
+    <h3>Services</h3>
+    <ul>
+        <li><a href="#">Flight Booking</a></li>
+        <li><a href="#">Hotel Reservation</a></li>
+        <li><a href="#">Train Tickets</a></li>
+        <li><a href="#">Bus Tickets</a></li>
+        <li><a href="#">Cruise Packages</a></li> <!-- NEW -->
+        <li><a href="#">Holiday Packages</a></li> <!-- CHANGED -->
+        <li><a href="#">Car Rental</a></li>
+    </ul>
+</div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> support@travelease.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Customer Support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelEase. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
